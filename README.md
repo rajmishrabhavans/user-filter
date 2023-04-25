@@ -16,10 +16,10 @@ Refer to https://nodejs.org/en/ to install nodejs
 ### Clone project or download and extract zip file
 
 ## Live link
-https://gleeful-haupia-c1605a.netlify.app/
+https://dancing-valkyrie-28f5b3.netlify.app/
 
 ### Initializing the backend
-1. Go to ads-backend directory
+1. Go to server directory
 2. Use `npm i` or `npm install` to install neccessary packages
 3. Setup with the mongodb database url in .env file as DATABASE_URL
 4. Use command `node app.js` to start the backend server
@@ -28,6 +28,6 @@ https://gleeful-haupia-c1605a.netlify.app/
         Connected to DB..
 
 ## Initializing the frontend
-1. Go to ads-frontend directory
+1. Go to client directory
 2. Use `npm i` or `npm install` to install neccessary packagesDATABASE_URL
 4. Use command `npm start` to start the frontend locally
