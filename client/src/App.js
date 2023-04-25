@@ -4,8 +4,8 @@ import noresult from './img/noresult.jpg'
 import {UserCard, GroupCard} from './components/MyCard';
 import 'fontawesome-free/css/all.min.css';
 function App() {
-  const [users, setUsers] = useState([]);
-  const [group, setGroup] = useState([]);
+  const [users, setUsers] = useState([]); //for storing the users information
+  const [group, setGroup] = useState([]); // for storing the city group information
   const [inputData, setInputData] = useState('1');
   const [loading, setLoading] = useState(false);
 
@@ -29,7 +29,6 @@ function App() {
       }
       const rdata = await res.json();
       setUsers(rdata.matchedUsers)
-      // console.log(rdata.matchedAds);
 
     } catch (error) {
       console.log(error);
@@ -37,6 +36,8 @@ function App() {
       setLoading(false);
     }
   }
+
+  // loads the data for top 10 city with most users and their average income
   const loadGroup = async () => {
     try {
       setLoading(true);
@@ -52,7 +53,6 @@ function App() {
       }
       const rdata = await res.json();
       setGroup(rdata.matchedGroup)
-      // console.log(rdata.matchedAds);
 
     } catch (error) {
       console.log(error);
@@ -60,6 +60,8 @@ function App() {
       setLoading(false);
     }
   }
+
+  // changes the data on selection of different options
   const changeUserData=(e)=>{
     const value= e.target.value;
     setInputData(value);
@@ -85,7 +87,7 @@ function App() {
       </select>
     </div>
 
-      {/* Displays cards based on useState */}
+      {/* Displays cards based on useState and selected options*/}
       {inputData!=="5"?
       <UserCard userData={users} />
       :
